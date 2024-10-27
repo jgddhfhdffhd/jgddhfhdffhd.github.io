@@ -5,6 +5,7 @@ body {
     color: #333; /* 深灰色字体 */
     margin: 0; 
     padding: 20px; 
+    text-align: center;
 }
 
 /* 容器样式 */
@@ -22,23 +23,27 @@ h1 {
     color: #007bff; /* 蓝色标题 */
     text-align: center; 
     margin-bottom: 20px; 
+    margin: 20px 0;
 }
 
 h2 {
     color: #495057; /* 深色副标题 */
     text-align: center; 
     margin-bottom: 15px; 
+    margin: 20px 0;
 }
 
 h3 {
     color: #343a40; /* 深灰色 */
     margin-top: 30px; 
     margin-bottom: 10px; 
+    margin: 20px 0;
 }
 
 /* 列表样式 */
 ol {
     padding-left: 20px; /* 列表左侧间距 */
+    list-style-position: inside; 
 }
 
 li {

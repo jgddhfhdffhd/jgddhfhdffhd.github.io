@@ -52,7 +52,7 @@ li {
 
 /* 段落样式 */
 p {
-    text-align: left; /* 段落左对齐 */
+    text-align: center; /* 段落左对齐 */
     line-height: 1.6; /* 行高 */
     margin-bottom: 20px; 
 }

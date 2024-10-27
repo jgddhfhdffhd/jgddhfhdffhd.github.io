@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif; /* 使用简洁字体 */
     background-color: #f4f4f4; /* 浅灰色背景 */
     color: #333; /* 深灰色字体 */
-    margin-left: 20px;
+    margin-left: 300px;
     padding: 20px; 
     text-align: left; /* 改为左对齐 */
 }
@@ -58,7 +58,7 @@ img {
     max-width: 100%; /* 确保图片响应式 */
     height: auto; /* 自适应高度 */
     display: block; 
-    margin: 20px auto; /* 图片居中 */
+    margin: 20px 0; /* 图片居中 */
 }
 
 /* 链接样式 */

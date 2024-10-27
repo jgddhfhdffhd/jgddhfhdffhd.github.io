@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Hosting Tutorial</title>
+</head>
+<body>
+    <h1><a href="https://jgddhfhdffhd.github.io/GCP.html">GOOGLE CLOUD PLATFORM</a></h1>
+      <h2>Hosting a static web app on Google Cloud using GCS</h2>
+        <h3>Contents</h3>
+        <ol>
+          <li><a href="#1-AA">What you will need</a></li>
+          <li><a href="#2-BB">Account Setup</a></li>
+          <li><a href="#3-create-an-ec2-instance">Create an EC2 Instance</a></li>
+          <li><a href="#4-connect-to-your-instance">Connect to Your Instance</a></li>
+          <li><a href="#5-set-up-a-web-server-using-apache">Set Up a Web Server using Apache</a></li>
+          <li><a href="#6-dynamic-domain-name-service">Dynamic Domain Name Service</a></li>
+          <li><a href="#7-installing-https">Installing HTTPS</a></li>
+          <li><a href="#8-connecting-to-your-vm-via-ssh-on-visual-studio-code">Connecting to Your VM via SSH on Visual Studio Code</a></li>
+        </ol>
+
+          <h3 id="1-AA">What you will need</h3>
+          <li>1.simple html file created</li> 
+          <li>2.Google account</li> 
+          <li>3.Credit card ( for enabling billing)</li>
+  
+          <h3 id="2-BB">step 1 set up project</h3>
+          <p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/1d748bb1-e898-45de-88d3-ec6192be9c11" alt="image" /></p>
+
+<ul>
+  <li>Go to <a href="https://aws.amazon.com/">https://aws.amazon.com/</a>.</li>
+  <li>Click on the “Create an AWS Account” or “Get Started for Free” Button.</li>
+  <li>Input your email and choose an account name.</li>
+  <li>Go to your emails and find the email to verify your account.</li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/f8d96357-2430-4e9b-a488-2045e0186859" alt="image" /></p>
+
+<ul>
+  <li>Create a root password and click continue.</li>
+  <li>Input your contact information (Full name, phone number and address).  Check the terms and conditions, then click continue.</li>
+  <li>You will need to input a credit or debit card, which will temporarily hold up to  $1 USD as a pending transaction. You will be able to access AWS Free tier products for 12 months.</li>
+  <li>To verify your phone number, choose how to receive the code, by text message or my voice call, input your phone number, then type the security check to send the code.</li>
+  <li>Input the code you received then click continue.</li>
+  <li>Choose the Basic Support – Free option. Click Complete Sign Up button.</li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/3c75b2be-ec10-45d1-99dd-b0814d6f7fd7" alt="image" /></p>
+
+<h3 id="3-create-an-ec2-instance">3. Create an EC2 Instance</h3>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/3b8f5f4e-63c8-423b-936f-769df2f9e681" alt="image" /></p>
+
+<ul>
+  <li>Once you log into your account, the console home page will be displayed, if the EC2 doesn’t show in you recently visited click on view all services.</li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/8a115217-4e7d-4399-92bd-ec0fd02c6b5f" alt="image" /></p>
+
+<ul>
+  <li>Under the Compute category, choose EC2.</li>
+  <li>This will load your EC2 Dashboard.</li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/e7d2f44d-e059-46b7-abdd-5854abfac103" alt="image" /></p>
+
+<ul>
+  <li>In the EC2 Dashboard, click on the Launch instance button.</li>
+  <li>Input a name for you instance,</li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/21d378e3-106a-412c-b029-46badce56148" alt="image" /></p>
+
+<ul>
+  <li>Under the Application and OS Image section, choose Ubuntu operating system.</li>
+  <li>Amazon Machine Image (AMI) choose the Ubuntu Server 22.04 LTS (free tier eligible).</li>
+  <li>The architecture choose the 64-bit (x86).</li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/dbe17fd8-f737-4a24-b6eb-f4e88cd15a10" alt="image" /></p>
+
+<ul>
+  <li>Choose the t2.micro instance type.</li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/4abe63a3-ee11-4928-bfab-b201461afe0c" alt="image" /></p>
+
+<ul>
+  <li>Click on “Create new key pair” hyperlink.</li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/067f00fb-e01e-4069-89d8-e4582881e88e" alt="image" /></p>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/f0ee138b-f9b6-48a8-b510-84b5d2541ad2" alt="image" /></p>
+
+<ul>
+  <li>Name your key pair.</li>
+  <li>Choose RSA key pair type.</li>
+  <li>Choose the .pem format.</li>
+  <li>Click on the create key pair button.</li>
+  <li>A file will be downloaded to your computer.</li>
+  <li>Save the file <strong>(DO NOT LOSE OR DELETE THIS FILE)</strong>.</li>
+  <li>Choose the keypair you just created in the drop down menu.</li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/14a6df61-2980-4e5d-abd9-e35983a9c25c" alt="image" /></p>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/179dd156-227e-4fbb-8734-e4aa821a4f47" alt="image" /></p>
+
+<ul>
+  <li>In the Network Settings, create a security group.</li>
+  <li>Check Allow SSH traffic from Anywhere.</li>
+  <li>Check Allow HTTPS traffic from the internet.</li>
+  <li>Check Allow HTTP traffic from the internet.</li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/cc8e4a38-3f54-4ab8-bed3-2a1714c0d8ce" alt="image" /></p>
+
+<ul>
+  <li>For the storage type in 16</li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/bc973bdd-d583-4077-936c-7e1c0db1c4c8" alt="image" /></p>
+
+<ul>
+  <li>Leave the Advance and Summary settings as the default settings.</li>
+  <li>Click on the “Launch instance” Button</li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/6f573112-ab3d-4412-8876-7f2790f34328" alt="image" /></p>
+
+<h3 id="4-connect-to-your-instance">4. Connect to your instance</h3>
+
+<p>You can connect to your instance via AWS Console, for the initial set up, I would recommend connecting via SSH and using the Key Pair created during the instance set up.</p>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/14bfce83-58eb-4e08-a4eb-7cd5c2e48e74" alt="image" /></p>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/bde7ff57-2030-4c47-aea1-318526d86e3b" alt="image" /></p>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/c4378091-9887-4819-a728-7d685f617c0b" alt="image" /></p>
+
+<h3 id="5-set-up-a-web-server-using-apache">5. Set Up a Web Server using Apache</h3>
+
+<ul>
+  <li>Update and uprade all packages</li>
+</ul>
+
+<blockquote>
+  <p>sudo apt update</p>
+</blockquote>
+
+<blockquote>
+  <p>sudo apt upgrade</p>
+</blockquote>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/d24adb0e-87b3-42c4-9a05-2ea78f2a5500" alt="image" /></p>
+
+<ul>
+  <li><strong>Installing and configuring Apache</strong></li>
+  <li>In the instance console, install and configure Apache by inputting the following commands:</li>
+</ul>
+
+<blockquote>
+  <p>sudo apt install apache2 apache2-utils</p>
+</blockquote>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/8914b577-ce34-4f13-b170-8e0dc77058e6" alt="image" /></p>
+
+<ul>
+  <li>Type Y to continue with the installation.</li>
+</ul>
+
+<blockquote>
+  <p>sudo systemctl enable apache2</p>
+</blockquote>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/6aa15248-66b4-45d7-8c7a-7d34563f05af" alt="image" /></p>
+
+<ul>
+  <li>Find your public IP address and copy and paste it into a browser address bar.</li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/97f8efca-2810-4afd-8c1f-7328908d66b1" alt="image" /></p>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/d980bf9c-5791-41df-bf1d-39f81008d2b1" alt="image" /></p>
+
+<p>**Congratulations you now have a running web server! **</p>
+
+<ul>
+  <li><strong>Ownerships and groups:</strong></li>
+</ul>
+
+<blockquote>
+  <p>sudo chown www-data:www-data /var/www/html -R</p>
+</blockquote>
+
+<blockquote>
+  <p>sudo usermod -a -G www-data ubuntu</p>
+</blockquote>
+
+<blockquote>
+  <p>sudo chown -R ubuntu:www-data /var/www</p>
+</blockquote>
+
+<blockquote>
+  <p>sudo chmod 2775 /var/www &amp;&amp; find /var/www -type d -exec sudo chmod 2775 {} \; &amp;&amp; find /var/www -type f -exec sudo chmod 0664 {} \;</p>
+</blockquote>
+
+<ul>
+  <li><strong>Creating a website and log directories:</strong></li>
+</ul>
+
+<blockquote>
+  <p>sudo mkdir /var/www/bookclub</p>
+</blockquote>
+
+<blockquote>
+  <p>sudo mkdir /var/log/apache2/bookclub</p>
+</blockquote>
+
+<ul>
+  <li><strong>Set up the virtual configuration file:</strong></li>
+</ul>
+
+<blockquote>
+  <p>cd /etc/apache2/sites-available/</p>
+</blockquote>
+
+<ul>
+  <li>Copy the default configuration file and edit the new configuration file:</li>
+</ul>
+
+<blockquote>
+  <p>sudo cp 000-default.conf bookclub.conf</p>
+</blockquote>
+
+<blockquote>
+  <p>sudo nano bookclub.conf</p>
+</blockquote>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/d0c49edd-9cdc-47c7-b8a3-2952c5508502" alt="image" /></p>
+
+<ul>
+  <li>Update the document root to the directory we created earlier to /var/www/bookclub</li>
+  <li>And update the access and error logs to save in the directory we created earlier in /var/log/apache2/bookclub</li>
+  <li>
+    <p>Save this file by pressing Ctrl + S on the keyboard and Ctrl + X to close the file.</p>
+  </li>
+  <li>Enable the site by activating the virtual host configuration file.</li>
+  <li>Go to the /etc/apache2/site-available directory:</li>
+</ul>
+
+<blockquote>
+  <p>cd /etc/apache2/sites-available/</p>
+</blockquote>
+
+<ul>
+  <li>Run the command to enable the configuration we created and disable the default file:</li>
+</ul>
+
+<blockquote>
+  <p>sudo a2ensite bookclub.conf</p>
+</blockquote>
+
+<blockquote>
+  <p>sudo a2dissite 000-default.conf</p>
+</blockquote>
+
+<ul>
+  <li>Restart Apache</li>
+</ul>
+
+<blockquote>
+  <p>sudo systemctl restart apache2</p>
+</blockquote>
+
+<ul>
+  <li>Create an index.html file</li>
+</ul>
+
+<blockquote>
+  <p>cd /var/www/bookclub</p>
+</blockquote>
+
+<blockquote>
+  <p>nano index.html</p>
+</blockquote>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/79f09a47-07ef-4022-b62f-c2733618b30c" alt="image" /></p>
+
+<ul>
+  <li>
+    <p>Save (Ctrl + S) and Exit the file (Ctrl + X)</p>
+  </li>
+  <li>
+    <p>Refresh the browser and you should now see the index file you created.</p>
+  </li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/af0b78fb-28c8-40ec-a0b9-b4b6aeabb658" alt="image" /></p>
+
+<h3 id="6-dynamic-domain-name-service">6. Dynamic Domain Name Service</h3>
+<p>The AWS instance we created has a dynamic IP that is changing regularly, we can use a service such as Duckdns.org to assign a constant web address that is easy to remember.</p>
+
+<p>Go to <a href="https://duckdns.org/">https://duckdns.org</a>.</p>
+
+<ul>
+  <li>Sign in using your, Twitter, GitHub or Google account.</li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/eef83211-5381-4a95-bde1-73960bcdd579" alt="image" /></p>
+
+<ul>
+  <li>Input a unique web address and click add domain.</li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/20c8940f-94bc-4241-a5fa-ef25a9bccb93" alt="image" />
+<img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/fb66ca34-9a21-4fd5-bfca-1bacb94ad519" alt="image" /></p>
+
+<ul>
+  <li>Click install on the button in the menu at the top of the page.</li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/d5988de2-5ed7-4085-bcb6-77277b6169d0" alt="image" /></p>
+
+<ul>
+  <li>Choose the linuxcron in the operating system section.</li>
+  <li>Choose your domain you created from the dropdown menu.</li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/2c491cc5-5770-4b72-986c-64804eac19f7" alt="image" /></p>
+
+<ul>
+  <li>Follow the instructions in the linux cron section, ensure linux is running crontab and curl is installed.</li>
+  <li>You may need to adapt and personallised some of the commands:</li>
+</ul>
+
+<blockquote>
+  <p>cd ~</p>
+</blockquote>
+
+<blockquote>
+  <p>mkdir duckdns</p>
+</blockquote>
+
+<blockquote>
+  <p>cd duckdns</p>
+</blockquote>
+
+<blockquote>
+  <p>nano duck.sh</p>
+</blockquote>
+
+<ul>
+  <li>Copy and paste the code from your instructions on Duckdns</li>
+</ul>
+
+<pre><code class="language-code">echo url="https://www.duckdns.org/update?domains=YOUR_DOMAIN&amp;token=YOUR_TOKEN&amp;ip=" | curl -k -o ~/duckdns/duck.log -K –
+</code></pre>
+
+<ul>
+  <li>Press Ctrl + S to save and Ctrl X to exit the file.</li>
+</ul>
+
+<blockquote>
+  <p>chmod 700 duck.sh</p>
+</blockquote>
+
+<blockquote>
+  <p>crontab -e</p>
+</blockquote>
+
+<ul>
+  <li>Choose 1 and press enter.</li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/f6cf9d63-641e-41cd-84b4-eb0169f75557" alt="image" /></p>
+
+<ul>
+  <li>Copy and paste the code into the bottom of that file which will run a script to update Duckdns with the new IP address every 5 minutes</li>
+</ul>
+
+<pre><code class="language-code">*/5 * * * * ~/duckdns/duck.sh &gt;/dev/null 2&gt;&amp;1
+</code></pre>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/40b46326-ec2f-4ddf-832b-5ccc8c44eb48" alt="image" /></p>
+
+<ul>
+  <li>Press Ctrl + S to save and Ctrl X to exit the file.</li>
+  <li>Test the script:</li>
+</ul>
+
+<blockquote>
+  <p>./duck.sh</p>
+</blockquote>
+
+<blockquote>
+  <p>cat duck.log</p>
+</blockquote>
+
+<ul>
+  <li>This should return OK.</li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/7a3aaf3c-c5b6-4db3-b184-7c117dc73be5" alt="image" /></p>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/82d384fd-f142-4deb-a6da-3114e099570e" alt="image" /></p>
+
+<p><strong>Your new web address should now be working.</strong></p>
+
+<h3 id="7-installing-https">7. Installing HTTPS</h3>
+
+<blockquote>
+  <p>sudo apt update</p>
+</blockquote>
+
+<blockquote>
+  <p>sudo apt install snapd</p>
+</blockquote>
+
+<blockquote>
+  <p>sudo snap install –classic certbot</p>
+</blockquote>
+
+<blockquote>
+  <p>sudo certbot –apache</p>
+</blockquote>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/c7e3f360-c6f4-4189-bd54-2776c189f4c8" alt="image" /></p>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/8685ae26-c7dd-43fd-96cb-8359c3d0c4f6" alt="image" /></p>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/c990e33f-f392-4d73-b169-552276292987" alt="image" /></p>
+
+<h3 id="8-connecting-to-your-vm-via-ssh-on-visual-studio-code">8. Connecting to Your VM via SSH on Visual Studio Code</h3>
+
+<ul>
+  <li>Install Remote SSH and SSH Editing Configuration from the VSC marketplace.</li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/2ecc0700-482b-425b-8335-f53cd7ac464c" alt="image" /></p>
+
+<ul>
+  <li>Press Ctrl + Shift + P on your keyboard</li>
+  <li>In the search bar, search for ssh</li>
+  <li>Find add new SSH host</li>
+  <li>Choose the .ssh/config file</li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/f0683db0-12ce-4bef-a847-3006550b5e2f" alt="image" /></p>
+
+<ul>
+  <li>Save this file</li>
+  <li>Press Ctrl + Shift + P on your keyboard</li>
+  <li>Find Connect to SSH Host</li>
+  <li>Choose Linux</li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/3e3eccfb-f68d-42cd-bb1d-f2923e07f468" alt="image" /></p>
+
+<ul>
+  <li>Choose Continue</li>
+  <li>Wait for the connection to connect</li>
+  <li>Click on open folder</li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/e99f696e-12bd-4b2d-a549-905540fdf46f" alt="image" /></p>
+
+<ul>
+  <li>Type /var/www/bookclub/ into the address bar and click OK</li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/0647951a-0dc0-4e69-88ec-3df0bc5e163d" alt="image" /></p>
+
+<ul>
+  <li>You should now be able to see your index.html file you created in the command line</li>
+</ul>
+
+<p><img src="https://github.com/NickPaterson/EC2-Tutorial-/assets/46958743/2b0e29a9-1e78-485c-b4c1-a0f4b19fc888" alt="image" /></p>
+
+
+      
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/anchor-js/4.1.0/anchor.min.js" integrity="sha256-lZaRhKri35AyJSypXXs4o6OPFTbTmUoltBbDCbdzegg=" crossorigin="anonymous"></script>
+    <script>anchors.add();</script>
+  </body>
+</html>

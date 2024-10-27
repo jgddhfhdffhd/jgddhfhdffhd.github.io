@@ -1,38 +1,75 @@
+/* 基本样式设置 */
 body {
-  font-family: Arial, sans-serif;  
-  background-color: #f9f9f9;       
-  margin: 0;                       
-  padding: 20px;                   
+  font-family: 'Helvetica Neue', Arial, sans-serif; /* 字体样式 */
+  background-color: #ffffff;                        /* 背景颜色 */
+  color: #333;                                     /* 字体颜色 */
+  margin: 0;                                       /* 去掉默认边距 */
+  padding: 20px;                                   /* 页面内边距 */
 }
 
+/* 标题样式 */
 h1 {
-  color: #2c3e50;                  
-  text-align: center;              
+  color: #4CAF50;                                  /* 主标题颜色 */
+  text-align: center;                              /* 中心对齐 */
+  margin-bottom: 20px;                             /* 底部间距 */
 }
 
 h2 {
-  color: #34495e;                  
+  color: #333;                                     /* 次级标题颜色 */
+  margin-top: 30px;                               /* 顶部间距 */
 }
 
+/* 有序列表样式 */
 ol {
-  padding-left: 20px;              
+  padding-left: 20px;                              /* 左侧内边距 */
 }
 
+/* 段落样式 */
 p {
-  line-height: 1.5;                
-  margin-bottom: 15px;             
+  line-height: 1.6;                                /* 行高 */
+  margin-bottom: 15px;                             /* 段落底部间距 */
 }
 
+/* 图片样式 */
 img {
-  max-width: 100%;                 
-  height: auto;                    
+  max-width: 100%;                                 /* 最大宽度100%，自适应 */
+  height: auto;                                    /* 高度自适应 */
+  border-radius: 8px;                              /* 圆角边框 */
 }
 
+/* 链接样式 */
 a {
-  color: #2980b9;                  
-  text-decoration: none;           
+  color: #4CAF50;                                  /* 链接颜色 */
+  text-decoration: none;                           /* 去掉下划线 */
 }
 
 a:hover {
-  text-decoration: underline;      
+  text-decoration: underline;                      /* 悬停时添加下划线 */
+}
+
+/* 按钮样式 */
+.button {
+  display: inline-block;                           /* 显示为块元素 */
+  padding: 10px 20px;                             /* 内边距 */
+  background-color: #4CAF50;                      /* 按钮背景颜色 */
+  color: white;                                    /* 按钮文字颜色 */
+  border: none;                                    /* 去掉边框 */
+  border-radius: 5px;                             /* 圆角 */
+  text-align: center;                              /* 文字居中 */
+  text-decoration: none;                           /* 去掉下划线 */
+  cursor: pointer;                                 /* 光标样式 */
+}
+
+.button:hover {
+  background-color: #45a049;                      /* 悬停时颜色变化 */
+}
+
+/* 边框样式 */
+.container {
+  max-width: 800px;                               /* 最大宽度 */
+  margin: 0 auto;                                 /* 居中对齐 */
+  padding: 20px;                                  /* 内边距 */
+  border: 1px solid #ddd;                         /* 边框样式 */
+  border-radius: 10px;                            /* 圆角边框 */
+  background-color: #f9f9f9;                      /* 背景颜色 */
 }

@@ -22,20 +22,19 @@ body {
 h1 {
     color: #007bff; /* 蓝色标题 */
     text-align: left; /* 改为左对齐 */
-    margin: 20px 0; /* 统一设置 margin */
+    margin-left: 300px;
 }
 
 h2 {
     color: #495057; /* 深色副标题 */
     text-align: left; /* 改为左对齐 */
-    margin: 20px 0; /* 统一设置 margin */
+    margin-left: 300px;
 }
 
 h3 {
     color: #343a40; /* 深灰色 */
     text-align: left; /* 改为左对齐 */
-    margin: 20px 0; /* 统一设置 margin */
-}
+    margin-left: 300px;
 
 /* 列表样式 */
 ol {

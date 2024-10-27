@@ -1,75 +1,71 @@
 /* 基本样式设置 */
 body {
-  font-family: 'Helvetica Neue', Arial, sans-serif; /* 字体样式 */
-  background-color: #ffffff;                        /* 背景颜色 */
-  color: #333;                                     /* 字体颜色 */
-  margin: 0;                                       /* 去掉默认边距 */
-  padding: 20px;                                   /* 页面内边距 */
+    font-family: 'Arial', sans-serif; /* 使用简洁字体 */
+    background-color: #f4f4f4; /* 浅灰色背景 */
+    color: #333; /* 深灰色字体 */
+    margin: 0; 
+    padding: 20px; 
+}
+
+/* 容器样式 */
+.container {
+    max-width: 800px; 
+    margin: 0 auto; /* 居中对齐 */
+    padding: 30px; 
+    border-radius: 12px; 
+    background-color: white; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* 更柔和的阴影效果 */
 }
 
 /* 标题样式 */
 h1 {
-  color: #4CAF50;                                  /* 主标题颜色 */
-  text-align: center;                              /* 中心对齐 */
-  margin-bottom: 20px;                             /* 底部间距 */
+    color: #007bff; /* 蓝色标题 */
+    text-align: center; 
+    margin-bottom: 20px; 
 }
 
 h2 {
-  color: #333;                                     /* 次级标题颜色 */
-  margin-top: 30px;                               /* 顶部间距 */
+    color: #495057; /* 深色副标题 */
+    text-align: center; 
+    margin-bottom: 15px; 
 }
 
-/* 有序列表样式 */
+h3 {
+    color: #343a40; /* 深灰色 */
+    margin-top: 30px; 
+    margin-bottom: 10px; 
+}
+
+/* 列表样式 */
 ol {
-  padding-left: 20px;                              /* 左侧内边距 */
+    padding-left: 20px; /* 列表左侧间距 */
+}
+
+li {
+    margin-bottom: 10px; /* 列表项之间的间距 */
 }
 
 /* 段落样式 */
 p {
-  line-height: 1.6;                                /* 行高 */
-  margin-bottom: 15px;                             /* 段落底部间距 */
+    text-align: left; /* 段落左对齐 */
+    line-height: 1.6; /* 行高 */
+    margin-bottom: 20px; 
 }
 
 /* 图片样式 */
 img {
-  max-width: 100%;                                 /* 最大宽度100%，自适应 */
-  height: auto;                                    /* 高度自适应 */
-  border-radius: 8px;                              /* 圆角边框 */
+    max-width: 100%; /* 确保图片响应式 */
+    height: auto; /* 自适应高度 */
+    display: block; 
+    margin: 0 auto; /* 图片居中 */
 }
 
 /* 链接样式 */
 a {
-  color: #4CAF50;                                  /* 链接颜色 */
-  text-decoration: none;                           /* 去掉下划线 */
+    color: #007bff; /* 链接颜色 */
+    text-decoration: none; /* 去掉下划线 */
 }
 
 a:hover {
-  text-decoration: underline;                      /* 悬停时添加下划线 */
-}
-
-/* 按钮样式 */
-.button {
-  display: inline-block;                           /* 显示为块元素 */
-  padding: 10px 20px;                             /* 内边距 */
-  background-color: #4CAF50;                      /* 按钮背景颜色 */
-  color: white;                                    /* 按钮文字颜色 */
-  border: none;                                    /* 去掉边框 */
-  border-radius: 5px;                             /* 圆角 */
-  text-align: center;                              /* 文字居中 */
-  text-decoration: none;                           /* 去掉下划线 */
-  cursor: pointer;                                 /* 光标样式 */
-}
-
-.button:hover {
-  background-color: #45a049;                      /* 悬停时颜色变化 */
-}
-
-/* 边框样式 */
-.container {
-  max-width: 800px;                               /* 最大宽度 */
-  margin: 0 auto;                                 /* 居中对齐 */
-  padding: 20px;                                  /* 内边距 */
-  border: 1px solid #ddd;                         /* 边框样式 */
-  border-radius: 10px;                            /* 圆角边框 */
-  background-color: #f9f9f9;                      /* 背景颜色 */
+    text-decoration: underline; /* 悬停时出现下划线 */
 }

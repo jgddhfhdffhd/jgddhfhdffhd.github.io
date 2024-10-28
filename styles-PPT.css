@@ -4,6 +4,7 @@ body {
     color: #333; /* 深灰色字体 */
     padding: 20px; /* 添加内边距 */
     text-align: left; /* 改为左对齐 */
+    margin-left: 250px;
 }
 
 /* 容器样式 */

@@ -3,7 +3,7 @@ body {
     font-family: 'Arial', sans-serif; /* 使用简洁字体 */
     background-color: #f4f4f4; /* 浅灰色背景 */
     color: #333; /* 深灰色字体 */
-    margin-left: 300px;
+    margin-left: 400px;
     padding: 20px; 
     text-align: left; /* 改为左对齐 */
 }
@@ -22,19 +22,19 @@ body {
 h1 {
     color: #007bff; /* 蓝色标题 */
     text-align: left; /* 改为左对齐 */
-    margin-left: 300px;
+    
 }
 
 h2 {
     color: #495057; /* 深色副标题 */
     text-align: left; /* 改为左对齐 */
-    margin-left: 300px;
+    
 }
 
 h3 {
     color: #343a40; /* 深灰色 */
     text-align: left; /* 改为左对齐 */
-    margin-left: 300px;
+    
 
 /* 列表样式 */
 ol {

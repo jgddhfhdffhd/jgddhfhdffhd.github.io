@@ -52,13 +52,6 @@ p {
     margin-bottom: 20px; 
 }
 
-/* 图片样式 */
-img {
-    max-width: 100%; /* 确保图片响应式 */
-    height: auto; /* 自适应高度 */
-    display: block; 
-    margin: 20px 0; /* 图片居中 */
-}
 
 /* 链接样式 */
 a {

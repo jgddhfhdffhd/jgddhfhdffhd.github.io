@@ -1,1 +1,64 @@
-11
+/* 基本样式设置 */
+body {
+    font-family: 'Arial', sans-serif; /* 使用简洁字体 */
+    background-color: #f4f4f4; /* 浅灰色背景 */
+    color: #333; /* 深灰色字体 */
+    margin-left: 400px;
+    padding: 20px; 
+    text-align: left; /* 改为左对齐 */
+}
+
+/* 容器样式 */
+.container {
+    max-width: 800px; 
+    margin: 0 auto; /* 居中对齐 */
+    padding: 30px; 
+    border-radius: 12px; 
+    background-color: white; 
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* 更柔和的阴影效果 */
+}
+
+/* 标题样式 */
+h1 {
+    color: #007bff; /* 蓝色标题 */
+    text-align: left; /* 改为左对齐 */
+    
+}
+
+h2 {
+    color: #495057; /* 深色副标题 */
+    text-align: left; /* 改为左对齐 */
+    
+}
+
+h3 {
+    color: #343a40; /* 深灰色 */
+    text-align: left; /* 改为左对齐 */
+    
+
+/* 列表样式 */
+ol {
+    padding-left: 20px; /* 列表左侧间距 */
+    list-style-position: inside; 
+}
+
+li {
+    margin-bottom: 10px; /* 列表项之间的间距 */
+}
+
+/* 段落样式 */
+p {
+    line-height: 1.6; /* 行高 */
+    margin-bottom: 20px; 
+}
+
+
+/* 链接样式 */
+a {
+    color: #007bff; /* 链接颜色 */
+    text-decoration: none; /* 去掉下划线 */
+}
+
+a:hover {
+    text-decoration: underline; /* 悬停时出现下划线 */
+}

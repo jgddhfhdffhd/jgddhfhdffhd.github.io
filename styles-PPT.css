@@ -1,10 +1,8 @@
-/* 基本样式设置 */
 body {
     font-family: 'Arial', sans-serif; /* 使用简洁字体 */
     background-color: #f4f4f4; /* 浅灰色背景 */
     color: #333; /* 深灰色字体 */
-    margin-left: 250px;
-    padding: 20px; 
+    padding: 20px; /* 添加内边距 */
     text-align: left; /* 改为左对齐 */
 }
 
@@ -16,7 +14,9 @@ body {
     border-radius: 12px; 
     background-color: white; 
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* 更柔和的阴影效果 */
+    margin-left: 250px; /* 如果需要左边距 */
 }
+
 
 /* 标题样式 */
 h1 {

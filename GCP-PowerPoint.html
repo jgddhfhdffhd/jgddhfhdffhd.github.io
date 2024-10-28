@@ -100,8 +100,130 @@
         <p>"Interactive Tutorials" provides some guides to help users how to use Google Cloud. </p>
         <p>"Developer Tools" offer some practical tools, such as Cloud Shell and Cloud SDK, which can help you interact
             with resources or edit code online.</p>
-    
-        
+        <br>
+        <h3 id="3-CC">Usage scenarios of GOOGLE CLOUD</h3>
+        <p><img src="images/微信图片_20241028100953.png" alt="image" width="1000" height="560"/></p>
+        <p>A small business wants to launch a professional website for their services. They need a fast, reliable platform 
+            without having to manage all the technical infrastructure themselves. They use Google Cloud Platform (GCP) to 
+            easily develop, host, and manage the website.</p>
+        <p><img src="images/微信图片_20241028100955.png" alt="image" width="1000" height="560"/></p>
+        <p>GCP's machine learning services include AI Platform and AutoML, which enable users to build, train, and deploy 
+            machine learning models. Users can use the pre-trained models and tools provided by GCP to quickly realize functions 
+            such as natural language processing and image recognition. With GCP, users can easily integrate machine learning 
+            capabilities and improve the intelligence level of applications.</p>
+        <p><img src="images/微信图片_20241028100957.png" alt="image" width="1000" height="560"/></p>
+        <p>Reference from info cleanse https://www.infocleanse.com/business-data/technology-customers-list/cloud-computing-software-customers-list/google-cloud-platform-customers-list/</p>
+        <br>    
+        <h3 id="4-DD">Advantages and disadvantages of GOOGLE CLOUD</h3>    
+        <p><img src="images/微信图片_20241028100958.png" alt="image" width="1000" height="560"/></p>
+        <p>GCP's billing model is based on pay-as-you-go, where users only pay for the resources they actually use. The 
+            console provides expense management tools where users can view usage and expenses in real time, set budgets 
+            and alerts to avoid overspending. Understanding the expense structure helps users optimize resource usage and 
+            reduce cloud computing costs.</p>
+        <br>
+        <h3 id="5-EE">Code example</h3>
+        <p><img src="images/微信图片_20241028101000.png" alt="image" width="1000" height="560"/></p>
+        <li>Command Line: Fast, simple, suitable for manual or small-scale operations.</li>
+        <li>REST API: Flexible, programming interface for programmatic access and developer integration.</li>
+        <li>Terraform: Repeatable, declarative configuration for large and complex deployments.</li>
+        <p>Users can choose three suitable methods (Command Line, REST API, Terraform) to interact with and manage 
+            Google Cloud.These three methods provide different levels of flexibility and control.</p>
+        <p><img src="images/微信图片_20241028101003.png" alt="image" width="1000" height="560"/></p>
+        <p>To create a virtual machine, the four important components of the code are:</p>
+        <li>Instance name</li>
+        <li>The geographic region of the instance</li>
+        <li>Network interface</li>
+        <li>Create disk</li>
+        <p><img src="images/微信图片_20241028101005.png" alt="image" width="1000" height="560"/></p>
+        <p>The graphical interface is more beginner-friendly, but the terminal has the advantage of 
+            efficiency, flexibility, and control, especially when frequent operations or complex 
+            configurations are required; thus, the command line is more efficient.</p>
+        <p><img src="images/微信图片_20241028101008.png" alt="image" width="1000" height="560"/></p>
+        <p>To ensure network security, a firewall needs to be established for the VM. The four important code settings for the firewall are:</p>
+        <li>"name": Specifies the name of the firewall rule</li>
+        <li>"network" : Specifies the network to which the firewall rule applies</li>
+        <li>"priority": Determines the priority of a firewall rule. A smaller number indicates a higher priority. The usual range is 0-65535.</li>
+        <li>"allowed": Define the allowed traffic rules. The allowed protocol and port must be entered</li>
+        <p><img src="images/微信图片_20241028101010.png" alt="image" width="1000" height="560"/></p>
+        <p>Each VM instance requires at least one boot disk, which contains the operating system. The three important components of the code 
+            for creating a disk are:</p>
+        <li>Create a persistent disk named disk-1 with a size of 100 GB.</li>
+        <li>Create a daily snapshot schedule named default-schedule-1 to retain snapshots for a maximum of 14 days.</li>
+        <li>Apply snapshot plans to disk-1 disks to ensure that snapshots are automatically generated and managed.</li>
+        <br>
+        <h3 id="6-FF">Key technologies of GOOGLE CLOUD</h3>
+        <h3>Hosting a static web app on Google Cloud using GCS</h3>
+        <p>Step 1 : Set up project </p>
+        <p><img src="images/微信图片_20241028101012.png" alt="image" width="1000" height="560"/></p>
+        <p>Step 2 : Creates a cloud storage bucket </p>
+        <p><img src="images/微信图片_20241028101014.png" alt="image" width="1000" height="560"/></p>
+        <p>Step 3 : Uplode files</p>
+        <p><img src="images/微信图片_20241028101016.png" alt="image" width="1000" height="560"/></p>
+        <p>Step 4 : Allow public access</p>
+        <p><img src="images/微信图片_20241028101018.png" alt="image" width="1000" height="560"/></p>
+        <P>Step 5 : Copy URL</P>
+        <p><img src="images/微信图片_20241028101020.png" alt="image" width="1000" height="560"/></p>
+        <p>Step 6 : Open browser</p>
+        <p><img src="images/微信图片_20241028101023.png" alt="image" width="1000" height="560"/></p>
+        <p>Step 7 : Webpage effect</p>
+        <p><img src="images/微信图片_20241028101025.png" alt="image" width="1000" height="560"/></p>
+        <br>
+        <h3>Hosting Applications Using Google Cloud Run</h3>
+        <p><img src="images/微信图片_20241028101026.png" alt="image" width="1000" height="560"/></p>
+        <p>Cloud Run is a fully managed compute service from Google Cloud that allows users to easily 
+            deploy and manage containerized applications. It supports a serverless architecture, where users 
+            only need to focus on code and containers, and don't need to manage infrastructure. Cloud Run autoscales, 
+            automatically adjusts resources based on traffic, supports services triggered by HTTP requests, 
+            and works with a variety of programming languages and frameworks. It also provides seamless integration 
+            with other Google Cloud services for scenarios such as building microservices, APIs, and background 
+            processing tasks. This page also gives a brief overview of its pros and cons.</p>
+        <p><img src="images/微信图片_20241028101028.png" alt="image" width="1000" height="560"/></p>
+        <p>For this aspect of the content, a simple application was made and hosted. It is simply divided into two parts, app making and hosting</p>
+        <p><img src="images/微信图片_20241028101030.png" alt="image" width="1000" height="560"/></p>
+        <p>First, I created a Flask app that handles GET and POST requests. Next, I wrote a Dockerfile for 
+            containerization and listed the dependencies in requirements.txt. Finally, I built and ran the Docker 
+            container. With that initial work completed, we moved on to the important hosting phase.</p>
+        <p><img src="images/微信图片_20241028101032.png" alt="image" width="1000" height="560"/></p>
+        <p>First, create a new project and a new folder, then copy the application files you previously completed 
+            into that folder. Use the illustrated commands to build your Docker image and deploy your image to Cloud 
+            Run. Once successful, a URL will appear, and you can click on it to access your application.</p>
+        <br>
+        <h3 id="7-GG">GOOGLE CLOUD Tutorial Guide</h3>
+        <p><img src="images/微信图片_20241028101034.png" alt="image" width="1000" height="560"/></p>
+        <p>GCP provides rich tutorials and documentation to help users quickly get started. Users can visit GCP's 
+            official website to find interactive tutorials and developer guides to learn how to use various services. 
+            Here is a brief animated video I made introducing Google Cloud and how to create a simple instance. Due to 
+            the removal of watermarks in the video, some areas may appear blurry. I hope this will not affect understanding.</p>
+        <br>
+        <h3 id="8-HH">References</h3>
+        <p><img src="images/微信图片_20241028101036.png" alt="image" width="1000" height="560"/></p>
+        <p><img src="images/微信图片_20241028101038.png" alt="image" width="1000" height="560"/></p>
+        <p><img src="images/微信图片_20241028101039.png" alt="image" width="1000" height="560"/></p>
+        <p>In preparing for this presentation, we consulted a variety of sources, including Wikipedia, 
+            the CSDN blog, the Zhihu column, and instructional videos on YouTube. These resources provide 
+            us with in-depth understanding and a wealth of information.</p>
+        <li>Wikipedia. (Year). Google Cloud Platform. In Wikipedia. Retrieved Month Day, Year, from https://en.wikipedia.org/wiki/Google_Cloud_Platform</li>
+        <li>Google Cloud. "Summarize the main services of Google Cloud in one sentence." CSDN, https://blog.csdn.net/weixin_52179956/article/details/142744894. (Accessed: 13 October 2024).</li>
+        <li>How to create a VM virtual machine on Google Cloud. CSDN, https://blog.csdn.net/nvd11/article/details/133848457. (Accessed: 14 October 2024).</li>
+        <li>GCP Quick Start. Zhihu, https://zhuanlan.zhihu.com/p/517328722. (Accessed: 14 October 2024).</li>
+        <li>"Cloud SQL in a Minute." YouTube, uploaded by [Channel Name], https://www.youtube.com/watch?v=ZMQ2n6i-7jw&t=45s. (Accessed: 16 October 2024).</li>
+        <li>"Hosting a Static Website on Google Cloud Using Google Cloud Storage." Medium, Google Cloud, https://medium.com/google-cloud/hosting-a-static-website-on-google-cloud-using-google-cloud-storage-ddebcdcc8d5b. (Accessed: 16 October 2024).</li>
+        <li>"Hosting a static web app on Google Cloud using GCS." YouTube, uploaded by Google Cloud Tech, https://www.youtube.com/watch?v=HkJxy22P5gk&t=106s. (Accessed: 16 October 2024).</li>
+        <li>"Hosting a Static Website on Google Cloud Using Google Cloud Storage." Medium, Google Cloud, https://medium.com/google-cloud/hosting-a-static-website-on-google-cloud-using-google-cloud-storage-ddebcdcc8d5b. (Accessed: 16 October 2024).</li>
+        <li>"Google Cloud Platform: Pros and Cons." ITU Online, https://www.ituonline.com/blogs/google-cloud-platform-pros-and-cons/. (Accessed: 16 October 2024).</li>
+        <li>Google Cloud Console. "Add Disk." https://console.cloud.google.com/compute/disksAdd?referrer=search&hl=en&project=adept-cycle-438713-g. (Accessed: 16 October 2024).</li>
+        <li>Google Cloud Console. "Add Instance." https://console.cloud.google.com/compute/instancesAdd?hl=en&project=adept-cycle-438713-g6. (Accessed: 16 October 2024).</li>
+        <li>Google Cloud Console. "Add Firewall Policy." https://console.cloud.google.com/net-security/firewall-manager/firewall-policies/add?hl=en&project=adept-cycle-438713-g6. (Accessed: 16 October 2024).</li>
+        <li>YouTube. "Video Title." https://www.youtube.com/watch?v=HkJxy22P5gk. (Accessed: 16 October 2024).</li>
+        <li>Firebase. "Hosting with Cloud Run." https://firebase.google.cn/docs/hosting/cloud-run. (Accessed: 16 October 2024).</li>
+        <li>Cloud Native. "Google Cloud Run Introduction." https://cloudnative.to/blog/google-cloud-run-intro/. (Accessed: 16 October 2024).</li>
+        <li>Towards Data Science. "Cloud Run: Dataset Summaries via HTTP Request." https://towardsdatascience.com/cloud-run-dataset-summaries-via-http-request-9b5fe24fe9c1. (Accessed: 16 October 2024).</li>
+        <br>
+        <br>
+        <p><img src="images/微信图片_20241028101041.png" alt="image" width="1000" height="560"/></p>
+        <p>That's the end of our PowerPoint. If you're interested in learning about Google Cloud, make 
+            sure you don't miss out! Give it a try yourself and see what fun things you can accomplish 
+            on Google Cloud! If you have any questions, you can contact me.</p>
     </div>
 </body>
         
